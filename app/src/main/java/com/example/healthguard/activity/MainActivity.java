@@ -27,6 +27,8 @@ public class MainActivity extends AppCompatActivity {
         slideModels.add(new SlideModel(R.drawable.medicines, ScaleTypes.FIT));
         slideModels.add(new SlideModel(R.drawable.appoinment, ScaleTypes.FIT));
         slideModels.add(new SlideModel(R.drawable.pharmacy, ScaleTypes.FIT));
-        slideModels.add(new SlideModel(R.drawable.onlinemed, ScaleTypes.FIT));
+        slideModels.add(new SlideModel(R.drawable.ambulance, ScaleTypes.FIT));
+
+        imageSlider.setImageList(slideModels,ScaleTypes.FIT);
     }
 }

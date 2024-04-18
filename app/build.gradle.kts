@@ -1,5 +1,6 @@
 plugins {
     id("com.android.application")
+    id("com.google.gms.google-services")
 }
 
 android {
@@ -47,4 +48,7 @@ dependencies {
     implementation("com.airbnb.android:lottie:6.0.1")
     //--------------for banners------------
     implementation("com.github.denzcoskun:ImageSlideshow:0.1.0")
+    //-------------firebase---------------
+    implementation(platform("com.google.firebase:firebase-bom:32.8.1"))
+    implementation("com.google.firebase:firebase-auth:22.3.1")
 }
