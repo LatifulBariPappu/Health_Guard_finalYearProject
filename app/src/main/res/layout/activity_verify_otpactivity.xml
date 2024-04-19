@@ -24,7 +24,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
-        android:text="OTP Verification"
+        android:text="@string/otp_verification"
         android:textStyle="bold"
         android:textSize="20sp"/>
     <TextView
@@ -34,7 +34,7 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="50dp"
         android:gravity="center"
-        android:text="Enter the OTP send to"
+        android:text="@string/enter_the_otp_send_to"
         android:textSize="16sp"/>
         <TextView
             android:layout_width="match_parent"
@@ -140,7 +140,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Didn't receive the OTP?"
+                android:text="@string/didn_t_receive_the_otp"
                 android:textSize="15sp"
                 />
             <TextView
@@ -148,7 +148,7 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/textRecentOTP"
                 android:layout_marginLeft="8dp"
-                android:text="RESEND OTP"
+                android:text="@string/resend_otp"
                 android:textColor="#F65422"
                 android:textSize="17sp"
                 android:textStyle="bold"/>
@@ -163,7 +163,7 @@
                 android:id="@+id/btnVerify"
                 android:layout_margin="30dp"
                 android:background="@drawable/background_btn"
-                android:text="VERIFY"
+                android:text="@string/verify"
                 android:textSize="18sp"
                 android:textStyle="bold"
                 android:textColor="@color/white"/>

@@ -40,7 +40,7 @@ public class SentOTPActivity extends AppCompatActivity {
                     return;
                 }
                 progressBar.setVisibility(view.VISIBLE);
-                progressBar.setVisibility(view.INVISIBLE);
+                buttonGetOTP.setVisibility(view.INVISIBLE);
 
                 PhoneAuthProvider.getInstance().verifyPhoneNumber(
                         "+88"+inputMobile.getText().toString(),

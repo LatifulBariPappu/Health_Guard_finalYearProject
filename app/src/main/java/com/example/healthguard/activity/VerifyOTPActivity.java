@@ -18,10 +18,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.healthguard.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.FirebaseException;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.PhoneAuthCredential;
 import com.google.firebase.auth.PhoneAuthProvider;
+
+import java.util.concurrent.TimeUnit;
 
 public class VerifyOTPActivity extends AppCompatActivity {
     private EditText inputCode1,inputCode2,inputCode3,inputCode4,inputCode5,inputCode6;
@@ -43,6 +46,7 @@ public class VerifyOTPActivity extends AppCompatActivity {
         inputCode5=findViewById(R.id.inputCode5);
         inputCode6=findViewById(R.id.inputCode6);
 
+        TextView resentOtpText=findViewById(R.id.textRecentOTP);
         setupOTPInputs();
 
         final ProgressBar progressBar=findViewById(R.id.progressbar);
@@ -94,7 +98,37 @@ public class VerifyOTPActivity extends AppCompatActivity {
                 }
             }
         });
+        resentOtpText.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                PhoneAuthProvider.getInstance().verifyPhoneNumber(
+                        "+88"+getIntent().getStringExtra("mobile"),
+                        60,
+                        TimeUnit.SECONDS,
+                        VerifyOTPActivity.this,
+                        new PhoneAuthProvider.OnVerificationStateChangedCallbacks(){
+                            @Override
+                            public void onCodeSent(@NonNull String newVerificationId, @NonNull PhoneAuthProvider.ForceResendingToken forceResendingToken) {
+                                verificationId=newVerificationId;
+                                Toast.makeText(VerifyOTPActivity.this, "OTP Sent", Toast.LENGTH_SHORT).show();
+                            }
+
+                            @Override
+                            public void onVerificationCompleted(@NonNull PhoneAuthCredential phoneAuthCredential) {
+
+                            }
+
+                            @Override
+                            public void onVerificationFailed(@NonNull FirebaseException e) {
+
+                                Toast.makeText(VerifyOTPActivity.this, e.getMessage(), Toast.LENGTH_SHORT).show();
+                            }
+                        }
+                );
+            }
+        });
     }
+
 
     private void setupOTPInputs(){
         inputCode1.addTextChangedListener(new TextWatcher() {
