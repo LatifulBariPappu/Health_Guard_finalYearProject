@@ -10,11 +10,9 @@ import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import androidx.activity.EdgeToEdge;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-
 import com.example.healthguard.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -23,7 +21,6 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.PhoneAuthCredential;
 import com.google.firebase.auth.PhoneAuthProvider;
-
 import java.util.concurrent.TimeUnit;
 
 public class VerifyOTPActivity extends AppCompatActivity {
@@ -112,12 +109,10 @@ public class VerifyOTPActivity extends AppCompatActivity {
                                 verificationId=newVerificationId;
                                 Toast.makeText(VerifyOTPActivity.this, "OTP Sent", Toast.LENGTH_SHORT).show();
                             }
-
                             @Override
                             public void onVerificationCompleted(@NonNull PhoneAuthCredential phoneAuthCredential) {
 
                             }
-
                             @Override
                             public void onVerificationFailed(@NonNull FirebaseException e) {
 
@@ -128,8 +123,6 @@ public class VerifyOTPActivity extends AppCompatActivity {
             }
         });
     }
-
-
     private void setupOTPInputs(){
         inputCode1.addTextChangedListener(new TextWatcher() {
             @Override

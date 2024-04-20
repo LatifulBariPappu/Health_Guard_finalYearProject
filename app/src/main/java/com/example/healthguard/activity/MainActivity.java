@@ -1,9 +1,15 @@
 package com.example.healthguard.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 
+import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.media.Image;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Toast;
 
 import com.denzcoskun.imageslider.ImageSlider;
 import com.denzcoskun.imageslider.constants.ScaleTypes;
@@ -30,5 +36,30 @@ public class MainActivity extends AppCompatActivity {
         slideModels.add(new SlideModel(R.drawable.ambulance, ScaleTypes.FIT));
 
         imageSlider.setImageList(slideModels,ScaleTypes.FIT);
+
+        SharedPreferences sharedPreferences=getSharedPreferences("shared_prefs", Context.MODE_PRIVATE);
+        String username=sharedPreferences.getString("username","").toString();
+        Toast.makeText(getApplicationContext(), "Welcome "+username, Toast.LENGTH_SHORT).show();
+
+        CardView exit=findViewById(R.id.cardLogout);
+        exit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                SharedPreferences.Editor editor=sharedPreferences.edit();
+                editor.clear();
+                editor.apply();
+                startActivity(new Intent(MainActivity.this,LoginActivity.class));
+            }
+        });
+
+        CardView findDoctor=findViewById(R.id.cardFidDoctor);
+        findDoctor.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this,FindDoctorActivity.class));
+            }
+        });
+
+
     }
 }
