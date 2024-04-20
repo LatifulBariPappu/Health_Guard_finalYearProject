@@ -48,7 +48,7 @@ public class LoginActivity extends AppCompatActivity {
                         SharedPreferences.Editor editor=sharedPreferences.edit();
                         //to save our data with key and value
                         editor.apply();
-                        startActivity(new Intent(LoginActivity.this, SentOTPActivity.class));
+                        startActivity(new Intent(LoginActivity.this, MainActivity.class));
 
                     }else {
                         Toast.makeText(getApplicationContext(),"Invalid username and password",Toast.LENGTH_SHORT).show();
