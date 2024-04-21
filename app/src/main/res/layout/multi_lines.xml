@@ -47,7 +47,8 @@
             android:layout_weight="0.3"
             android:layout_height="wrap_content"
             android:id="@+id/line_e"
-            android:textColor="#007806"
+            android:textColor="#ED5120"
+            android:textSize="20sp"
             android:text="TextView"/>
     </LinearLayout>
 
