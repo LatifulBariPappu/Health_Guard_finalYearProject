@@ -87,9 +87,15 @@ public class LabTestActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 Intent it=new Intent(LabTestActivity.this,LabTestDetailsActivity.class);
                 it.putExtra("text1",packages[i][0]);
-                it.putExtra("text1",package_details[i]);
-                it.putExtra("text1",packages[i][4]);
+                it.putExtra("text2",package_details[i]);
+                it.putExtra("text3",packages[i][4]);
                 startActivity(it);
+            }
+        });
+        btnGoToCart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(LabTestActivity.this,CartLabActivity.class));
             }
         });
 
