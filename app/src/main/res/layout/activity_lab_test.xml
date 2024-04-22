@@ -8,7 +8,7 @@
     android:layout_height="match_parent"
     tools:context=".activity.LabTestActivity">
     <TextView
-        android:id="@+id/textViewDDName"
+        android:id="@+id/textViewLTName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
@@ -22,7 +22,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textViewDDTitle"
+        android:id="@+id/textViewLTTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Lab Test and Packages"
@@ -32,17 +32,18 @@
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewDDName" />
+        app:layout_constraintTop_toBottomOf="@+id/textViewLTName" />
 
     <ListView
         android:id="@+id/listViewLT"
         android:layout_width="match_parent"
         android:layout_height="550dp"
+        android:layout_marginTop="10dp"
         app:layout_constraintBottom_toTopOf="@+id/buttonLTBack"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewDDTitle"
+        app:layout_constraintTop_toBottomOf="@+id/textViewLTTitle"
         app:layout_constraintVertical_bias="0.31" />
 
     <Button
