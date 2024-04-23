@@ -149,7 +149,6 @@ public class CartLabActivity extends AppCompatActivity {
         Calendar cal=Calendar.getInstance();
         int hrs=cal.get(Calendar.HOUR);
         int mins=cal.get(Calendar.MINUTE);
-
         int style=AlertDialog.THEME_HOLO_DARK;
         timePickerDialog=new TimePickerDialog(this,style,timeSetListener,hrs,mins,true);
     }

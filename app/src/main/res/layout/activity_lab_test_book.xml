@@ -1,10 +1,110 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activity.LabTestBookActivity">
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="@drawable/back"
+    tools:context=".activity.BookAppoinmentActivity">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Health Guard"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:textSize="35dp"
+        android:layout_marginTop="20dp"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Please fill all details for booking"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:textSize="22sp"
+        android:layout_marginTop="20dp"
+        />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:background="@drawable/custom_edittext"
+        android:orientation="vertical"
+        android:padding="24dp">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <EditText
+            android:id="@+id/edittextLTBFullName"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="40dp"
+            android:backgroundTint="@color/white"
+            android:background="@drawable/custom_edittext"
+            android:drawableLeft="@drawable/baseline_person"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:drawablePadding="8dp"
+            android:hint="Full Name"
+            android:padding="8dp" />
+
+        <EditText
+            android:id="@+id/edittextLTBAddress"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/custom_edittext"
+            android:drawableLeft="@drawable/baseline_add_location_24"
+            android:drawablePadding="8dp"
+            android:backgroundTint="@color/white"
+            android:hint="Address"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:padding="8dp" />
+
+        <EditText
+            android:id="@+id/edittextLTBPincode"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/custom_edittext"
+            android:drawableLeft="@drawable/baseline_attachment_24"
+            android:drawablePadding="8dp"
+            android:backgroundTint="@color/white"
+            android:hint="Pin Code"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:padding="8dp" />
+        <EditText
+            android:id="@+id/edittextLTBContactnumber"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/custom_edittext"
+            android:drawableLeft="@drawable/baseline_add_call_24"
+            android:drawablePadding="8dp"
+            android:backgroundTint="@color/white"
+            android:hint="Contact Number"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:padding="8dp" />
+
+
+
+
+        <Button
+            android:id="@+id/buttonLTBBooking"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginTop="30dp"
+            android:backgroundTint="#E14514"
+            android:gravity="center_horizontal"
+            android:text="Book"
+            android:textAllCaps="true"
+            android:textSize="22sp"
+            app:cornerRadius="20dp" />
+
+
+
+    </LinearLayout>
+</LinearLayout>
