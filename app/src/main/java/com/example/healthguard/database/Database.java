@@ -96,7 +96,7 @@ public class Database extends SQLiteOpenHelper {
             do {
                 String product=c.getString(1);
                 String price=c.getString(2);
-                arr.add(product+"BDT "+price);
+                arr.add(product+"$"+price);
             }while (c.moveToNext());
         }
         db.close();
@@ -107,7 +107,7 @@ public class Database extends SQLiteOpenHelper {
         cv.put("username",username);
         cv.put("fullname",fullname);
         cv.put("address",address);
-        cv.put("contactno",contact);
+        cv.put("c",contact);
         cv.put("pincode",pincode);
         cv.put("date",date);
         cv.put("time",time);

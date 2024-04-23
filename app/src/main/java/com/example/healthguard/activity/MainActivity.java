@@ -73,6 +73,13 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(MainActivity.this,OrderDetailsActivity.class));
             }
         });
+        CardView buyMedicine=findViewById(R.id.cardBuyMedicine);
+        buyMedicine.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this,BuyMedicineActivity.class));
+            }
+        });
 
 
     }

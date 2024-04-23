@@ -29,7 +29,7 @@ import java.util.Calendar;
 import java.util.HashMap;
 
 public class CartLabActivity extends AppCompatActivity {
-    HashMap<String ,String> item;
+    HashMap<String,String> item;
     ArrayList list;
     SimpleAdapter sa;
     ListView lst;
@@ -64,7 +64,7 @@ public class CartLabActivity extends AppCompatActivity {
         }
         for(int i=0;i<dbData.size();i++){
             String arrData=dbData.get(i).toString();
-            String[] strData=arrData.split(java.util.regex.Pattern.quote("BDT "));
+            String[] strData=arrData.split(java.util.regex.Pattern.quote("$"));
             packages[i][0]=strData[0];
             packages[i][4]="Cost : "+strData[1]+"/-";
             totalamount=totalamount+Float.parseFloat(strData[1]);

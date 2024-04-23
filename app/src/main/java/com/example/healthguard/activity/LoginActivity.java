@@ -9,10 +9,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-
 import com.example.healthguard.database.Database;
 import com.example.healthguard.R;
 
@@ -21,7 +18,6 @@ public class LoginActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
         setContentView(R.layout.activity_login);
 
         EditText edUsername,edPassword;
@@ -48,8 +44,7 @@ public class LoginActivity extends AppCompatActivity {
                         SharedPreferences.Editor editor=sharedPreferences.edit();
                         //to save our data with key and value
                         editor.apply();
-                        startActivity(new Intent(LoginActivity.this, MainActivity.class));
-
+                        startActivity(new Intent(LoginActivity.this,MainActivity.class));
                     }else {
                         Toast.makeText(getApplicationContext(),"Invalid username and password",Toast.LENGTH_SHORT).show();
                     }
@@ -61,7 +56,7 @@ public class LoginActivity extends AppCompatActivity {
         signUpRedirectText.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(LoginActivity.this, SignupActivity.class));
+                startActivity(new Intent(LoginActivity.this,SignupActivity.class));
             }
         });
     }
