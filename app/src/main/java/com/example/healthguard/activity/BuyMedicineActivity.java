@@ -27,14 +27,14 @@ public class BuyMedicineActivity extends AppCompatActivity {
             {"VigorexTM Sildenafil","","","","70"}
     };
     private String[] package_details={
-            "Fever, headache, toothache, earache, bodyache, myalgia, dysmenorrhoea, neuralgia and sprains\n"+
-                    "It is indicated for the maintenance treatment of patients with chronic obstructive pulmonary disease (COPD).\n"+
-                    "Dermatomycoses due to candida, trichophyton, moulds and other fungi, skin diseases showing superinfections with these fungi e.g. inter digital mycoses, paronychia, candida vulvitis, balanitis, pityriasis versicolor and erythrasma.\n"+
-                    "Symptoms treated effectively include sneezing ,rhinorrhea, pruritus, ocular pruritus, tearing and redness of the eyes.\n"+
-                    "Atherosclerotic disease (ischemic stroke, myocardial infarction or established peripheral arterial disease)\n"+
-                    "Duodenal ulcer, Gastric ulcer, Gastro-esophageal reflux disease and Zollinger-Ellison syndrome, Gastritis.\n"+
-                    "Lamicet is indicated to treat Partial onset Seizure Generalized Tonic Clonic Seizure Bipolar disorder \n"+
-                    "OriliTM 150 tablet is indicated for the management of moderate to severe endometriosis pain with or without moderate hepatic impairment.\n"+
+            "Fever, headache, toothache, earache, bodyache,myalgia, dysmenorrhoea, neuralgia and sprains",
+                    "It is indicated for the maintenance treatment of patients with chronic obstructive pulmonary disease (COPD).",
+                    "Dermatomycoses due to candida, trichophyton, moulds and other fungi, skin diseases showing superinfections with these fungi\n"+"e.g. inter digital mycoses, paronychia, candida vulvitis, balanitis, pityriasis versicolor and erythrasma.",
+                    "Symptoms treated effectively include sneezing ,rhinorrhea, pruritus, ocular pruritus, tearing and redness of the eyes.",
+                    "Atherosclerotic disease (ischemic stroke, myocardial infarction or established peripheral arterial disease)",
+                    "Duodenal ulcer, Gastric ulcer, Gastro-esophageal reflux disease and Zollinger-Ellison syndrome, Gastritis.",
+                    "Lamicet is indicated to treat Partial onset Seizure Generalized Tonic Clonic Seizure Bipolar disorder.",
+                    "OriliTM 150 tablet is indicated for the management of moderate to severe endometriosis pain with or without moderate hepatic impairment.",
                     "VigorexTM is indicated for the treatment of Erectile Dysfunction."
 
     };
@@ -63,6 +63,7 @@ public class BuyMedicineActivity extends AppCompatActivity {
         btnGotoCart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                startActivity(new Intent(BuyMedicineActivity.this,CartBuyMedicineActivity.class));
 
             }
         });

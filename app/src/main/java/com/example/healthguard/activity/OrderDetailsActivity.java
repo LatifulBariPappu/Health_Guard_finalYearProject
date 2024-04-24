@@ -9,11 +9,7 @@ import android.widget.Button;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
 import com.example.healthguard.R;
 import com.example.healthguard.database.Database;
@@ -59,7 +55,7 @@ public class OrderDetailsActivity extends AppCompatActivity {
             } else {
                 order_details[i][3] = "Del:" + strData[4] + " " + strData[5];
             }
-            order_details[i][2] = "BDT." + strData[6];
+            order_details[i][2] = "$" + strData[6];
             order_details[i][4] = strData[7];
         }
 

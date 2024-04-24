@@ -6,9 +6,9 @@
     android:layout_width="match_parent"
     android:background="@drawable/back"
     android:layout_height="match_parent"
-    tools:context=".activity.CartLabActivity">
+    tools:context=".activity.CartBuyMedicineActivity">
     <TextView
-        android:id="@+id/textViewLTName"
+        android:id="@+id/textViewBMcartName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
@@ -22,32 +22,34 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textViewCartPackageName"
+        android:id="@+id/textViewBMCartPackageName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Lab Test Cart Item"
+        android:text="Medicine Cart Item"
         android:textStyle="bold"
         android:layout_marginTop="5dp"
         android:textColor="#E49B20"
-        android:textSize="24sp"
+        android:textSize="26sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewLTName" />
+        app:layout_constraintTop_toBottomOf="@+id/textViewBMcartName" />
 
     <ListView
-        android:id="@+id/listViewCart"
+        android:id="@+id/listViewBMCart"
         android:layout_width="match_parent"
         android:layout_height="400dp"
         android:layout_marginTop="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewCartPackageName"
+        app:layout_constraintTop_toBottomOf="@+id/textViewBMCartPackageName"
         app:layout_constraintVertical_bias="0.035" />
 
     <TextView
-        android:id="@+id/textViewCartTotalCost"
+        android:id="@+id/textViewBMCartTotalCost"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
@@ -56,66 +58,43 @@
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/listViewCart"/>
+        app:layout_constraintTop_toBottomOf="@id/listViewBMCart"/>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_marginTop="5dp"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
+        android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewCartTotalCost">
+        app:layout_constraintTop_toBottomOf="@+id/textViewBMCartTotalCost">
 
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="start"
-            android:layout_marginLeft="20dp"
+            android:layout_gravity="center"
             android:orientation="vertical">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="choose a date"
+                android:text="Select delivery date"
                 android:textColor="@color/white"
                 android:textSize="18sp" />
 
             <Button
-                android:id="@+id/buttonCartDatePicker"
+                android:id="@+id/buttonBMCartDatePicker"
                 style="?android:spinnerStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
                 android:text="12/12/2001" />
         </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="120dp"
-            android:orientation="vertical">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Time"
-                android:textColor="@color/white"
-                android:textSize="18sp" />
-
-            <Button
-                android:id="@+id/buttonCartTimePicker"
-                style="?android:spinnerStyle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:text="10.20" />
-        </LinearLayout>
     </LinearLayout>
 
     <Button
-        android:id="@+id/buttonCartBack"
+        android:id="@+id/buttonBMCartBack"
         android:layout_width="wrap_content"
         android:layout_height="60dp"
         android:layout_marginLeft="5dp"
@@ -134,7 +113,7 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/buttonCartCheckOut"
+        android:id="@+id/buttonBMCartCheckOut"
         android:layout_width="wrap_content"
         android:layout_height="60dp"
         android:layout_marginLeft="50dp"

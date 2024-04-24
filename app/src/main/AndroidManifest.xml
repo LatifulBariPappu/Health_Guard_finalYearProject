@@ -16,6 +16,18 @@
         android:theme="@style/Theme.HealthGuard"
         tools:targetApi="31">
         <activity
+            android:name=".activity.HealthArticleDetailsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.HealthArticlesActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.BuyMedicineBookActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.CartBuyMedicineActivity"
+            android:exported="false" />
+        <activity
             android:name=".activity.BuyMedicineDetailsActivity"
             android:exported="false" />
         <activity

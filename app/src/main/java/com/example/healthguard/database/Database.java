@@ -23,7 +23,7 @@ public class Database extends SQLiteOpenHelper {
         String qry2="create table cart(username text,product text,price float,otype text)";
         sqLiteDatabase.execSQL(qry2);
 
-        String qry3="create table orderplace(username text,fullname,tex,address text,concatno text,pincode int,date text,time text,amount float,otype text)";
+        String qry3="create table orderplace(username text,fullname text,address text,contactno text,pincode int,date text,time text,amount float,otype text)";
         sqLiteDatabase.execSQL(qry3);
     }
 
@@ -107,7 +107,7 @@ public class Database extends SQLiteOpenHelper {
         cv.put("username",username);
         cv.put("fullname",fullname);
         cv.put("address",address);
-        cv.put("c",contact);
+        cv.put("contactno",contact);
         cv.put("pincode",pincode);
         cv.put("date",date);
         cv.put("time",time);
@@ -132,4 +132,24 @@ public class Database extends SQLiteOpenHelper {
         db.close();
         return arr;
     }
+    public int checkAppointmentExists(String username,String fullname,String address,String contact,String date,String time){
+        int result=0;
+        String str[]=new String[6];
+        str[0]=username;
+        str[1]=fullname;
+        str[2]=address;
+        str[3]=contact;
+        str[4]=date;
+        str[5]=time;
+        SQLiteDatabase db=getReadableDatabase();
+        Cursor c=db.rawQuery("select * from orderplace where username = ? and fullname = ? and address = ? and contactno = ? and date = ? and time = ?",str);
+
+        if(c.moveToFirst()){
+            result=1;
+        }
+        db.close();
+        return result;
+
+    }
+
 }
