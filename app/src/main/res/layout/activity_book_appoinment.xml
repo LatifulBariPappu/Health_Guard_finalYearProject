@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:gravity="center"
-    android:background="@drawable/back"
+    android:background="@drawable/background2"
     tools:context=".activity.BookAppoinmentActivity">
     <TextView
         android:layout_width="wrap_content"
@@ -139,7 +139,6 @@
                         android:text="10.20" />
                 </LinearLayout>
             </LinearLayout>
-
 
             <Button
                 android:id="@+id/buttonBookAppointment"

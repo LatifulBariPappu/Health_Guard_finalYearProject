@@ -23,7 +23,6 @@ public class LoginActivity extends AppCompatActivity {
         EditText edUsername,edPassword;
         Button btn;
         TextView signUpRedirectText;
-
         edUsername=findViewById(R.id.login_email);
         edPassword=findViewById(R.id.login_password);
         btn=findViewById(R.id.login_btn);

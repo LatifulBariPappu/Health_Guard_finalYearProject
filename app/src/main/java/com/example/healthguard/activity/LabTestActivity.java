@@ -38,7 +38,7 @@ public class LabTestActivity extends AppCompatActivity {
             "LDH Location Dehydrogenase, Serum\n"+
             "Lipid Profile\n"+
             "liver Function Test",
-    "Blood Glucose Fasting",
+          "Blood Glucose Fasting",
         "COVID-19 Antibody - IgG",
         "Thyroid Profile-Total (T3,t4 & TSH Ultra-sensitive)",
         "Complete Hemogram\n"+

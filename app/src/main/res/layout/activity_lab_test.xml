@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
-    android:background="@drawable/back"
+    android:background="@drawable/background2"
     android:layout_height="match_parent"
     tools:context=".activity.LabTestActivity">
     <TextView
@@ -28,7 +28,7 @@
         android:text="Lab Test and Packages"
         android:textStyle="bold"
         android:layout_marginTop="5dp"
-        android:textColor="#E49B20"
+        android:textColor="#E64A19"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -37,7 +37,7 @@
     <ListView
         android:id="@+id/listViewLT"
         android:layout_width="match_parent"
-        android:layout_height="550dp"
+        android:layout_height="500dp"
         android:layout_marginTop="10dp"
         app:layout_constraintBottom_toTopOf="@+id/buttonLTBack"
         app:layout_constraintEnd_toEndOf="parent"
@@ -50,19 +50,19 @@
         android:id="@+id/buttonLTgotocart"
         android:layout_width="wrap_content"
         android:layout_height="60dp"
+        android:layout_marginLeft="5dp"
         android:layout_marginRight="50dp"
-        android:layout_marginBottom="4dp"
-        android:backgroundTint="#06169C"
+        android:layout_marginBottom="16dp"
+        android:backgroundTint="#E64A19"
         android:gravity="center_horizontal"
         android:text="GO TO CART"
         android:textAllCaps="true"
-        android:layout_marginLeft="5dp"
         android:textSize="22sp"
         android:textStyle="bold"
         app:cornerRadius="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.068"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
@@ -70,18 +70,18 @@
         android:layout_width="wrap_content"
         android:layout_height="60dp"
         android:layout_marginLeft="50dp"
-        android:layout_marginBottom="4dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginBottom="16dp"
         android:backgroundTint="#1222A3"
         android:gravity="center_horizontal"
         android:text="Back"
         android:textAllCaps="true"
-        android:layout_marginRight="5dp"
         android:textSize="22sp"
         android:textStyle="bold"
         app:cornerRadius="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.934"
         app:layout_constraintStart_toStartOf="parent" />
 
 

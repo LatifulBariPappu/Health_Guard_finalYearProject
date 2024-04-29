@@ -89,5 +89,13 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        CardView ambulance=findViewById(R.id.cardAmbulance);
+        ambulance.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this,AmbulanceActivity.class));
+            }
+        });
+
     }
 }

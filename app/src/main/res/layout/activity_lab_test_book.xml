@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:gravity="center"
-    android:background="@drawable/back"
+    android:background="@drawable/background2"
     tools:context=".activity.LabTestBookActivity">
     <TextView
         android:layout_width="wrap_content"
@@ -21,7 +21,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Please fill all details for booking"
-        android:textColor="@color/white"
+        android:textColor="#E64A19"
         android:textStyle="bold"
         android:textSize="22sp"
         android:layout_marginTop="20dp"
@@ -96,7 +96,7 @@
             android:id="@+id/buttonLTBBooking"
             android:layout_width="match_parent"
             android:layout_height="60dp"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="40dp"
             android:backgroundTint="#E14514"
             android:gravity="center_horizontal"
             android:text="Book"

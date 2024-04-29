@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
-    android:background="@drawable/back"
+    android:background="@drawable/background2"
     android:layout_height="match_parent"
     tools:context=".activity.CartBuyMedicineActivity">
     <TextView
@@ -28,7 +28,7 @@
         android:text="Medicine Cart Item"
         android:textStyle="bold"
         android:layout_marginTop="5dp"
-        android:textColor="#E49B20"
+        android:textColor="#CA6F11"
         android:textSize="26sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -119,7 +119,7 @@
         android:layout_marginLeft="50dp"
         android:layout_marginRight="5dp"
         android:layout_marginBottom="16dp"
-        android:background="@drawable/background_btn"
+        android:backgroundTint="#E64A19"
         android:gravity="center_horizontal"
         android:text="CHECKOUT"
         android:textAllCaps="true"

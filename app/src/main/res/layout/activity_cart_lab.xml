@@ -140,7 +140,7 @@
         android:layout_marginLeft="50dp"
         android:layout_marginRight="5dp"
         android:layout_marginBottom="16dp"
-        android:background="@drawable/background_btn"
+        android:backgroundTint="#E64A19"
         android:gravity="center_horizontal"
         android:text="CHECKOUT"
         android:textAllCaps="true"
