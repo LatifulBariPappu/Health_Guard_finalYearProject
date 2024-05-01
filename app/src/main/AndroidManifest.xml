@@ -16,6 +16,12 @@
         android:theme="@style/Theme.HealthGuard"
         tools:targetApi="31">
         <activity
+            android:name=".activity.FrezzAmulanceActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.NormalAmbulanceActivity"
+            android:exported="false" />
+        <activity
             android:name=".activity.AmbulanceActivity"
             android:exported="false" />
         <activity
