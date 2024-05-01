@@ -32,7 +32,7 @@ public class AmbulanceActivity extends AppCompatActivity {
                 startActivity(new Intent(AmbulanceActivity.this,NormalAmbulanceActivity.class));
             }
         });
-        amb1.setOnClickListener(new View.OnClickListener() {
+        amb2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(AmbulanceActivity.this,FrezzAmulanceActivity.class));
