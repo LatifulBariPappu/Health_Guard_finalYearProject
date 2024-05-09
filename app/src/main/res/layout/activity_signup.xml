@@ -46,6 +46,7 @@
                 android:background="@drawable/custom_edittext"
                 android:layout_marginTop="40dp"
                 android:padding="8dp"
+                android:inputType="textPersonName"
                 android:hint="Username"
                 android:drawableLeft="@drawable/baseline_person"
                 android:drawablePadding="8dp"/>

@@ -6,7 +6,6 @@ import androidx.cardview.widget.CardView;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.media.Image;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
@@ -15,6 +14,7 @@ import com.denzcoskun.imageslider.ImageSlider;
 import com.denzcoskun.imageslider.constants.ScaleTypes;
 import com.denzcoskun.imageslider.models.SlideModel;
 import com.example.healthguard.R;
+import com.example.healthguard.maps.MapsActivity;
 
 import java.util.ArrayList;
 
@@ -96,6 +96,12 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(MainActivity.this,AmbulanceActivity.class));
             }
         });
-
+        CardView hospital=findViewById(R.id.cardHospital);
+        hospital.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, MapsActivity.class));
+            }
+        });
     }
 }
