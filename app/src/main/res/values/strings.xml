@@ -7,4 +7,5 @@
     <string name="verify">VERIFY</string>
     <string name="sign_up">Sign Up</string>
     <string name="confirm_password">Confirm Password</string>
+    <string name="google_maps_key">AIzaSyDKSWZeOTnHxeNuNE5n7NwvV0tuRy0Wb4M</string>
 </resources>

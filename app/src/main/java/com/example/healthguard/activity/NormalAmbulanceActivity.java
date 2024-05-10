@@ -7,6 +7,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -20,7 +21,8 @@ import com.example.healthguard.R;
 
 public class NormalAmbulanceActivity extends AppCompatActivity {
 
-    Button callBtn,backBtn;
+    Button callBtn;
+    ImageView backBtn;
     static int PERMISSION_CODE=100;
     @Override
     protected void onCreate(Bundle savedInstanceState) {

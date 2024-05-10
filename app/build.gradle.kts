@@ -49,6 +49,7 @@ dependencies {
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
 
     //-------------------Added dependencies--------------------
+    implementation("com.google.android.libraries.places:places:3.4.0")
     //   ---------- for animation --------------
     implementation("com.airbnb.android:lottie:6.0.1")
     //--------------for banners------------

@@ -14,7 +14,6 @@ import com.denzcoskun.imageslider.ImageSlider;
 import com.denzcoskun.imageslider.constants.ScaleTypes;
 import com.denzcoskun.imageslider.models.SlideModel;
 import com.example.healthguard.R;
-import com.example.healthguard.maps.MapsActivity;
 
 import java.util.ArrayList;
 
@@ -100,7 +99,7 @@ public class MainActivity extends AppCompatActivity {
         hospital.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(MainActivity.this, MapsActivity.class));
+                startActivity(new Intent(MainActivity.this, HospitalNearMeActivity.class));
             }
         });
     }
