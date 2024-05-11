@@ -24,7 +24,7 @@ import com.example.healthguard.R;
 
 public class HospitalNearMeActivity extends AppCompatActivity {
     WebView mWebView;
-    ImageView btnBack;
+    ImageView btnBack,btnHospitals,btnClinics,btnPharmacy;
     private static final int LOCATION_PERMISSION_REQUEST_CODE = 1;
 
     @Override
@@ -34,6 +34,10 @@ public class HospitalNearMeActivity extends AppCompatActivity {
 
         mWebView=findViewById(R.id.webViewNearHospitals);
         btnBack=findViewById(R.id.backButtonHospitals);
+        btnClinics=findViewById(R.id.buttonClinics);
+        btnHospitals=findViewById(R.id.buttonHospitals);
+        btnPharmacy=findViewById(R.id.buttonPharmacy);
+
         mWebView.setWebViewClient(new WebViewClient()); // to handle URL redirects in the app
         mWebView.getSettings().setJavaScriptEnabled(true); // to enable JavaScript on web pages
         mWebView.getSettings().setGeolocationEnabled(true); // to enable GPS location on web pages
@@ -78,6 +82,29 @@ public class HospitalNearMeActivity extends AppCompatActivity {
 
 
         mWebView.loadUrl("https://www.google.com/maps/search/hospitals+near+me/");
+
+        btnPharmacy.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mWebView.loadUrl("https://www.google.com/maps/search/pharmacy+near+me/");
+            }
+        });
+
+        btnHospitals.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mWebView.loadUrl("https://www.google.com/maps/search/hospitals+near+me/");
+            }
+        });
+
+        btnClinics.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mWebView.loadUrl("https://www.google.com/maps/search/clinics+near+me/");
+            }
+        });
+
+
 
 
         btnBack.setOnClickListener(new View.OnClickListener() {

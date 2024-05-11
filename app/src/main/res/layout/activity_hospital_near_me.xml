@@ -20,11 +20,44 @@
         android:id="@+id/backButtonHospitals"
         android:layout_width="70dp"
         android:layout_height="70dp"
+        android:layout_marginBottom="130dp"
+        android:layout_marginStart="30dp"
         android:scaleType="centerInside"
         android:src="@drawable/backtoprevious"
-        android:layout_marginBottom="130dp"
-        android:layout_marginEnd="30dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/buttonHospitals"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginBottom="150dp"
+        android:layout_marginEnd="20dp"
+        android:scaleType="centerInside"
+        android:src="@drawable/hospital_map"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <ImageView
+        android:id="@+id/buttonClinics"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="10dp"
+        android:scaleType="centerInside"
+        android:src="@drawable/clinic"
+        app:layout_constraintBottom_toTopOf="@+id/buttonHospitals"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <ImageView
+        android:id="@+id/buttonPharmacy"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginEnd="20dp"
+        android:scaleType="centerInside"
+        android:src="@drawable/pharmacymap"
+        app:layout_constraintBottom_toTopOf="@+id/buttonClinics"
+        app:layout_constraintEnd_toEndOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
