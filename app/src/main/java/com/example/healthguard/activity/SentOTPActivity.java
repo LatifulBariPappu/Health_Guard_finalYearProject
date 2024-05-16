@@ -8,7 +8,6 @@ import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
-import androidx.activity.EdgeToEdge;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -24,7 +23,6 @@ public class SentOTPActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
         setContentView(R.layout.activity_sent_otpactivity);
 
         final EditText inputMobile=findViewById(R.id.inputMobile);
@@ -39,8 +37,8 @@ public class SentOTPActivity extends AppCompatActivity {
                     Toast.makeText(SentOTPActivity.this, "Enter Mobile", Toast.LENGTH_SHORT).show();
                     return;
                 }
-                progressBar.setVisibility(view.VISIBLE);
-                buttonGetOTP.setVisibility(view.INVISIBLE);
+                progressBar.setVisibility(View.VISIBLE);
+                buttonGetOTP.setVisibility(View.INVISIBLE);
 
                 PhoneAuthProvider.getInstance().verifyPhoneNumber(
                         "+88"+inputMobile.getText().toString(),

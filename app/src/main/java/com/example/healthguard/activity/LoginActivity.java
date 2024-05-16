@@ -21,12 +21,13 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
 
         EditText edUsername,edPassword;
-        Button btn;
+        Button btn,doctor_btn;
         TextView signUpRedirectText;
         edUsername=findViewById(R.id.login_email);
         edPassword=findViewById(R.id.login_password);
         btn=findViewById(R.id.login_btn);
         signUpRedirectText=findViewById(R.id.signupRedirectText);
+        doctor_btn=findViewById(R.id.doctorRedirectLogin);
         
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -56,6 +57,13 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(LoginActivity.this,SignupActivity.class));
+            }
+        });
+
+        doctor_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(LoginActivity.this, DoctorLoginActivity.class));
             }
         });
     }

@@ -8,4 +8,6 @@
     <string name="sign_up">Sign Up</string>
     <string name="confirm_password">Confirm Password</string>
     <string name="google_maps_key">AIzaSyDKSWZeOTnHxeNuNE5n7NwvV0tuRy0Wb4M</string>
+    <string name="doctor_username">Abdur Razzak</string>
+    <string name="doctor_password">doctor@123</string>
 </resources>

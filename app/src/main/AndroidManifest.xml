@@ -15,18 +15,22 @@
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
+        android:enableOnBackInvokedCallback="true"
         android:fullBackupContent="@xml/backup_rules"
         android:icon="@drawable/appicon"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.HealthGuard"
-        tools:targetApi="31">
+        tools:targetApi="tiramisu">
+        <activity
+            android:name=".activity.DoctorCallActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.DoctorLoginActivity"
+            android:exported="false" />
         <activity
             android:name=".activity.HospitalNearMeActivity"
-            android:exported="true" />
-        <activity
-            android:name=".maps.MapsActivity"
             android:exported="true" />
         <!--
              TODO: Before you run your application, you need a Google Maps API key.
@@ -96,12 +100,10 @@
             android:exported="false" />
         <activity
             android:name=".activity.VerifyOTPActivity"
-            android:exported="true"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustResize" />
         <activity
             android:name=".activity.SentOTPActivity"
-            android:exported="true"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustResize" />
         <activity

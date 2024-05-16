@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.SearchView;
 import android.widget.SimpleAdapter;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -41,6 +42,7 @@ public class BuyMedicineActivity extends AppCompatActivity {
     HashMap<String,String> item;
     ArrayList list;
     SimpleAdapter sa;
+    SearchView searchView;
 
     Button btnBack,btnGotoCart;
     ListView lst;
@@ -53,6 +55,7 @@ public class BuyMedicineActivity extends AppCompatActivity {
         btnBack=findViewById(R.id.buttonBMBack);
         btnGotoCart=findViewById(R.id.buttonBMGotoCart);
         lst=findViewById(R.id.listViewBM);
+        searchView=findViewById(R.id.search_bar_med);
 
         btnBack.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -83,6 +86,18 @@ public class BuyMedicineActivity extends AppCompatActivity {
                 new int[]{R.id.line_a,R.id.line_b,R.id.line_c,R.id.line_d,R.id.line_e});
         lst.setAdapter(sa);
 
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String s) {
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String s) {
+                sa.getFilter().filter(s);
+                return false;
+            }
+        });
         lst.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
@@ -91,7 +106,6 @@ public class BuyMedicineActivity extends AppCompatActivity {
                 it.putExtra("text2",package_details[i]);
                 it.putExtra("text3",packages[i][4]);
                 startActivity(it);
-
             }
         });
 
