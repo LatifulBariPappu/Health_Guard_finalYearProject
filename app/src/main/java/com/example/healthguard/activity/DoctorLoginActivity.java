@@ -20,34 +20,23 @@ public class DoctorLoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_doctor_login);
 
+        String doctorUserName="abdulHakim";
+
         username = findViewById(R.id.doctor_username);
         password = findViewById(R.id.doctor_password);
         loginButton = findViewById(R.id.doctor_login_btn);
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (username.getText().toString().equals("abdulHakim") && password.getText().toString().equals("doctor@123")) {
+                if (username.getText().toString().equals(doctorUserName) && password.getText().toString().equals("doctor@123")) {
                     Toast.makeText(DoctorLoginActivity.this, "Login Successful!", Toast.LENGTH_SHORT).show();
-                    startActivity(new Intent(DoctorLoginActivity.this,DoctorCallActivity.class));
+                    Intent i=new Intent(DoctorLoginActivity.this,DoctorCallActivity.class);
+                    startActivity(i);
                 } else {
                     Toast.makeText(DoctorLoginActivity.this, "Login Failed!", Toast.LENGTH_SHORT).show();
                 }
             }
         });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     }
 }

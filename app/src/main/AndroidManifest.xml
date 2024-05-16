@@ -11,6 +11,7 @@
     <uses-permission android:name="android.permission.CALL_PHONE" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
 
     <application
         android:allowBackup="true"
@@ -23,6 +24,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.HealthGuard"
         tools:targetApi="tiramisu">
+        <activity
+            android:name=".activity.UserCallActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.CallActivity"
+            android:exported="false" />
         <activity
             android:name=".activity.DoctorCallActivity"
             android:exported="false" />
