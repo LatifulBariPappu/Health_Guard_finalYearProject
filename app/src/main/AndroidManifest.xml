@@ -25,9 +25,6 @@
         android:theme="@style/Theme.HealthGuard"
         tools:targetApi="tiramisu">
         <activity
-            android:name=".activity.UserCallActivity"
-            android:exported="false" />
-        <activity
             android:name=".activity.CallActivity"
             android:exported="false" />
         <activity

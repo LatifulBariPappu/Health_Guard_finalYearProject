@@ -14,6 +14,7 @@ import com.denzcoskun.imageslider.ImageSlider;
 import com.denzcoskun.imageslider.constants.ScaleTypes;
 import com.denzcoskun.imageslider.models.SlideModel;
 import com.example.healthguard.R;
+import com.google.firebase.auth.FirebaseAuth;
 
 import java.util.ArrayList;
 
@@ -44,10 +45,13 @@ public class MainActivity extends AppCompatActivity {
         exit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                SharedPreferences.Editor editor=sharedPreferences.edit();
-                editor.clear();
-                editor.apply();
-                startActivity(new Intent(MainActivity.this,LoginActivity.class));
+//                SharedPreferences.Editor editor=sharedPreferences.edit();
+//                editor.clear();
+//                editor.apply();
+//                startActivity(new Intent(MainActivity.this,LoginActivity.class));
+                FirebaseAuth.getInstance().signOut();
+                startActivity(new Intent(getApplicationContext(),LoginActivity.class));
+                finish();
             }
         });
 
