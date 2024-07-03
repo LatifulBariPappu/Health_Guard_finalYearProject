@@ -11,13 +11,12 @@ import com.example.healthguard.R;
 
 public class AmbulanceActivity extends AppCompatActivity {
     Button btnback;
-    CardView amb1,amb2;
+    CardView amb1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ambulance);
         amb1=findViewById(R.id.cardViewAmb1);
-        amb2=findViewById(R.id.cardViewAmb2);
         btnback=findViewById(R.id.backbuttonAmb);
 
         btnback.setOnClickListener(new View.OnClickListener() {
@@ -30,12 +29,6 @@ public class AmbulanceActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(AmbulanceActivity.this,NormalAmbulanceActivity.class));
-            }
-        });
-        amb2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(AmbulanceActivity.this,FrezzAmulanceActivity.class));
             }
         });
     }

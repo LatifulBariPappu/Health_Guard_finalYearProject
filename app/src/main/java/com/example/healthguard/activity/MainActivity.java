@@ -19,7 +19,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
-
+    public static final String SHARED_PREFS="sharedPrefs";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,12 +45,13 @@ public class MainActivity extends AppCompatActivity {
         exit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//                SharedPreferences.Editor editor=sharedPreferences.edit();
-//                editor.clear();
-//                editor.apply();
-//                startActivity(new Intent(MainActivity.this,LoginActivity.class));
                 FirebaseAuth.getInstance().signOut();
-                startActivity(new Intent(getApplicationContext(),LoginActivity.class));
+                SharedPreferences sharedPreferences=getSharedPreferences(SHARED_PREFS,MODE_PRIVATE);
+                SharedPreferences.Editor editor= sharedPreferences.edit();
+                editor.putString("name","");
+                editor.apply();
+
+                startActivity(new Intent(MainActivity.this,LoginActivity.class));
                 finish();
             }
         });
@@ -104,6 +105,16 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(MainActivity.this, HospitalNearMeActivity.class));
+            }
+        });
+        CardView chat=findViewById(R.id.cardChat);
+        chat.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i=new Intent(MainActivity.this, ChatDocActivity.class);
+                i.putExtra("username",username);
+                startActivity(i);
+                finish();
             }
         });
     }

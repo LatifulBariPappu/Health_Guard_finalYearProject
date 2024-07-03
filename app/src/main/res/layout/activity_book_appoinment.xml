@@ -151,34 +151,19 @@
                 android:textAllCaps="true"
                 android:textSize="22sp"
                 app:cornerRadius="20dp" />
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="horizontal">
-    <Button
-        android:id="@+id/buttonAppBack"
-        android:layout_width="150dp"
-        android:layout_height="60dp"
-        android:backgroundTint="#0E1C8C"
-        android:layout_gravity="start"
-        android:text="Back"
-        android:layout_marginTop="5dp"
-        android:textAllCaps="true"
-        android:textSize="22sp"
-        app:cornerRadius="20dp" />
-    <Button
-        android:id="@+id/buttonUserConnecttoDoc"
-        android:layout_marginStart="10dp"
-        android:layout_width="190dp"
-        android:layout_height="60dp"
-        android:backgroundTint="#FFA000"
-        android:layout_gravity="right"
-        android:text="Connect to Abdul Hakim"
-        android:layout_marginTop="5dp"
-        android:textSize="16sp"
-        app:cornerRadius="20dp" />
 
-</LinearLayout>
+            <Button
+                android:id="@+id/buttonAppBack"
+                android:layout_width="150dp"
+                android:layout_height="60dp"
+                android:layout_gravity="start"
+                android:layout_marginTop="5dp"
+                android:backgroundTint="#0E1C8C"
+                android:text="Back"
+                android:textAllCaps="true"
+                android:textSize="22sp"
+                app:cornerRadius="20dp" />
 
-</LinearLayout>
+
+        </LinearLayout>
 </LinearLayout>

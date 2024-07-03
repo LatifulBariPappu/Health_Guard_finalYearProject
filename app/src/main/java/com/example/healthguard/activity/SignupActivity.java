@@ -9,12 +9,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import androidx.activity.EdgeToEdge;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-
-import com.example.healthguard.database.Database;
 import com.example.healthguard.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -23,20 +20,29 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
+
+
 
 public class SignupActivity extends AppCompatActivity {
     public static final String TAG="TAG";
+    FirebaseDatabase database;
+    FirebaseStorage storage;
+    FirebaseAuth fauth;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_signup);
 
-
         EditText edUsername,edEmail,edPassword,edConfirm;
         Button btn;
         TextView loginRedirectText;
-        FirebaseAuth fauth;
+
         loginRedirectText=findViewById(R.id.LoginRedirectText);
         edUsername=findViewById(R.id.signup_username);
         edEmail=findViewById(R.id.sigup_email);
@@ -45,6 +51,8 @@ public class SignupActivity extends AppCompatActivity {
         btn=findViewById(R.id.signup_btn);
 
         fauth=FirebaseAuth.getInstance();
+        database=FirebaseDatabase.getInstance();
+        storage=FirebaseStorage.getInstance();
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -76,16 +84,27 @@ public class SignupActivity extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if(task.isSuccessful()){
+                            String id = task.getResult().getUser().getUid();
+                            DatabaseReference reference = database.getReference().child("user").child(id);
+                            StorageReference storageReference = storage.getReference().child("Upload").child(id);
                             Toast.makeText(SignupActivity.this, "User Create", Toast.LENGTH_SHORT).show();
                             Intent i=new Intent(SignupActivity.this,LoginActivity.class);
                             i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
                             startActivity(i);
 
-
                             FirebaseUser fuser=fauth.getCurrentUser();
                             fuser.sendEmailVerification().addOnSuccessListener(new OnSuccessListener<Void>() {
                                 @Override
                                 public void onSuccess(Void unused) {
+                                    Users users=new Users(id,username,email,password);
+                                    reference.setValue(users).addOnCompleteListener(new OnCompleteListener<Void>() {
+                                        @Override
+                                        public void onComplete(@NonNull Task<Void> task) {
+                                            Intent i=new Intent(SignupActivity.this,LoginActivity.class);
+                                            i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
+                                            startActivity(i);
+                                        }
+                                    });
                                     Toast.makeText(SignupActivity.this, "Verification Email has been send", Toast.LENGTH_SHORT).show();
                                 }
                             }).addOnFailureListener(new OnFailureListener() {
@@ -111,60 +130,6 @@ public class SignupActivity extends AppCompatActivity {
                 startActivity(new Intent(SignupActivity.this, LoginActivity.class));
             }
         });
-//        btn.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                String username=edUsername.getText().toString();
-//                String email=edEmail.getText().toString();
-//                String password=edPassword.getText().toString();
-//                String confirm=edConfirm.getText().toString();
-//                Database db=new Database(getApplicationContext(),"healthcare",null,1);
-//                if(username.length()==0 || email.length()==0 || password.length()==0 || confirm.length()==0 ){
-//                    Toast.makeText(getApplicationContext(), "Please fill all details", Toast.LENGTH_SHORT).show();
-//                }else{
-//                    if(password.compareTo(confirm)==0){
-//                        if(isValid(password)){
-//                            db.register(username,email,password);
-//                            Toast.makeText(getApplicationContext(), "Record inserted", Toast.LENGTH_SHORT).show();
-//                            startActivity(new Intent(SignupActivity.this,LoginActivity.class));
-//
-//                        }else {
-//                            Toast.makeText(getApplicationContext(), "Password must contain at least 8 characters,having letter,digit and special symbol", Toast.LENGTH_SHORT).show();
-//                        }
-//
-//                    }else{
-//                        Toast.makeText(getApplicationContext(), "Password and confirm password didn't match", Toast.LENGTH_SHORT).show();
-//                    }
-//                }
-//            }
-//        });
     }
-//    public static boolean isValid(String passwordhere){
-//        int f1=0,f2=0,f3=0;
-//        if(passwordhere.length()<8){
-//            return false;
-//        }else{
-//            for(int p=0;p<passwordhere.length();p++){
-//                if(Character.isLetter(passwordhere.charAt(p))){
-//                    f1=1;
-//                }
-//            }
-//            for(int r=0;r<passwordhere.length();r++){
-//                if(Character.isDigit(passwordhere.charAt(r))){
-//                    f2=1;
-//                }
-//            }
-//            for(int s=0;s<passwordhere.length();s++){
-//                char c=passwordhere.charAt(s);
-//                if(c<=33&&c<=46 || c==64){
-//                    f3=1;
-//                }
-//            }
-//            if(f1==1 && f2==1 && f3==1){
-//                return true;
-//            }else {
-//                return false;
-//            }
-//        }
-//    }
+
 }

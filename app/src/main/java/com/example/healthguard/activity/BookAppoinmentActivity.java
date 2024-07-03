@@ -32,7 +32,7 @@ public class BookAppoinmentActivity extends AppCompatActivity {
     TextView tv;
     private DatePickerDialog datePickerDialog;
     private TimePickerDialog timePickerDialog;
-    private Button dateButton,timeButton,btnBook,btnBack,btnCalltoDoctor;
+    private Button dateButton,timeButton,btnBook,btnBack;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,9 +48,6 @@ public class BookAppoinmentActivity extends AppCompatActivity {
         timeButton=findViewById(R.id.buttonAppTime);
         btnBook=findViewById(R.id.buttonBookAppointment);
         btnBack=findViewById(R.id.buttonAppBack);
-        btnCalltoDoctor=findViewById(R.id.buttonUserConnecttoDoc);
-
-
 
         ed1.setKeyListener(null);
         ed2.setKeyListener(null);
@@ -69,13 +66,6 @@ public class BookAppoinmentActivity extends AppCompatActivity {
         ed2.setText(address);
         ed3.setText(contact);
         ed4.setText("Cons Fees : "+fees+"/-");
-        btnCalltoDoctor.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(BookAppoinmentActivity.this,DoctorCallActivity.class));
-            }
-        });
-
         //datePicker
         initDatePicker();
         dateButton.setOnClickListener(new View.OnClickListener() {
@@ -145,9 +135,8 @@ public class BookAppoinmentActivity extends AppCompatActivity {
         Calendar cal=Calendar.getInstance();
         int hrs=cal.get(Calendar.HOUR);
         int mins=cal.get(Calendar.MINUTE);
-
+        
         int style=AlertDialog.THEME_HOLO_DARK;
         timePickerDialog=new TimePickerDialog(this,style,timeSetListener,hrs,mins,true);
     }
-    
 }

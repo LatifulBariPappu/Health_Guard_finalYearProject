@@ -13,7 +13,6 @@ import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.healthguard.R;
-
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -64,6 +63,7 @@ public class DoctorDetailActivity extends AppCompatActivity {
     HashMap<String,String> item;
     ArrayList list;
     SimpleAdapter sa;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

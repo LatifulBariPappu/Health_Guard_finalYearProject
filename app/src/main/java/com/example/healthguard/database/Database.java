@@ -30,28 +30,7 @@ public class Database extends SQLiteOpenHelper {
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
 
     }
-    public void register(String username,String email,String password){
-        ContentValues cv=new ContentValues();
-        cv.put("username",username);
-        cv.put("email",email);
-        cv.put("password",password);
-        SQLiteDatabase db=getWritableDatabase();
-        db.insert("users",null,cv);
-        db.close();
-    }
 
-    public int login(String username,String passsword){
-        int result=0;
-        String str[]=new String[2];
-        str[0]=username;
-        str[1]=passsword;
-        SQLiteDatabase db=getReadableDatabase();
-        Cursor c=db.rawQuery("select * from users where username=? and password=?",str);
-        if(c.moveToFirst()){
-            result=1;
-        }
-        return result;
-    }
     public  void addCart(String username,String product,float price,String otype){
         ContentValues cv=new ContentValues();
         cv.put("username",username);

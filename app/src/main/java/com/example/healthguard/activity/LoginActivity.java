@@ -1,6 +1,5 @@
 package com.example.healthguard.activity;
 
-import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -15,7 +14,6 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
-import com.example.healthguard.database.Database;
 import com.example.healthguard.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -27,45 +25,27 @@ import com.google.firebase.auth.FirebaseUser;
 
 public class LoginActivity extends AppCompatActivity{
 
+
+    public static final String SHARED_PREFS="sharedPrefs";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
         EditText edUsername,edPassword;
-        Button btn,doctor_btn;
+        Button btn;
         TextView signUpRedirectText,forgetText;
         FirebaseAuth fauth = FirebaseAuth.getInstance();
+        
+        
+        checkBox();
 
         edUsername=findViewById(R.id.login_email);
         edPassword=findViewById(R.id.login_password);
         btn=findViewById(R.id.login_btn);
         forgetText=findViewById(R.id.forget);
         signUpRedirectText=findViewById(R.id.signupRedirectText);
-        doctor_btn=findViewById(R.id.doctorRedirectLogin);
-        
-//        btn.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                String username=edUsername.getText().toString();
-//                String password=edPassword.getText().toString();
-//                Database db=new Database(getApplicationContext(),"healthcare",null,1);
-//                if(username.length()==0 || password.length()==0){
-//                    Toast.makeText(getApplicationContext(),"Please fill all details",Toast.LENGTH_SHORT).show();
-//                }else{
-//                    if(db.login(username,password)==1){
-//                        Toast.makeText(getApplicationContext(),"Let us check...",Toast.LENGTH_SHORT).show();
-//                        SharedPreferences sharedPreferences=getSharedPreferences("shared_prefs", Context.MODE_PRIVATE);
-//                        SharedPreferences.Editor editor=sharedPreferences.edit();
-//                        //to save our data with key and value
-//                        editor.apply();
-//                        startActivity(new Intent(LoginActivity.this,SentOTPActivity.class));
-//                    }else {
-//                        Toast.makeText(getApplicationContext(),"Invalid username and password",Toast.LENGTH_SHORT).show();
-//                    }
-//                }
-//            }
-//        });
+
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -89,6 +69,12 @@ public class LoginActivity extends AppCompatActivity{
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if(task.isSuccessful()){
+                            SharedPreferences sharedPreferences=getSharedPreferences(SHARED_PREFS,MODE_PRIVATE);
+                            SharedPreferences.Editor editor= sharedPreferences.edit();
+
+                            editor.putString("name","true");
+                            editor.apply();
+                            
                             FirebaseUser firebaseUser=fauth.getCurrentUser();
                             assert firebaseUser!=null;
                             if(firebaseUser.isEmailVerified()){
@@ -153,11 +139,18 @@ public class LoginActivity extends AppCompatActivity{
             }
         });
 
-        doctor_btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(LoginActivity.this, DoctorLoginActivity.class));
-            }
-        });
+    }
+
+    private void checkBox() {
+        SharedPreferences sharedPreferences=getSharedPreferences(SHARED_PREFS,MODE_PRIVATE);
+        String check=sharedPreferences.getString("name","");
+        if(check.equals("true")){
+            Toast.makeText(LoginActivity.this, "login successful", Toast.LENGTH_SHORT).show();
+            Intent i=new Intent(LoginActivity.this,MainActivity.class);
+            i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
+            startActivity(i);
+            finish();
+        }
+
     }
 }
