@@ -25,22 +25,10 @@
         android:theme="@style/Theme.HealthGuard"
         tools:targetApi="tiramisu">
         <activity
-            android:name=".activity.ChatWindoActivity"
-            android:exported="false" />
+            android:name=".activity.ChatWindowwActivity"
+            android:exported="true" />
         <activity
             android:name=".activity.ChatDocActivity"
-            android:exported="false" />
-        <activity
-            android:name=".activity.DoctorFeedbackActivity"
-            android:exported="false" />
-        <activity
-            android:name=".activity.CallActivity"
-            android:exported="false" />
-        <activity
-            android:name=".activity.DoctorCallActivity"
-            android:exported="false" />
-        <activity
-            android:name=".activity.DoctorLoginActivity"
             android:exported="false" />
         <activity
             android:name=".activity.HospitalNearMeActivity"
@@ -60,9 +48,6 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyDKSWZeOTnHxeNuNE5n7NwvV0tuRy0Wb4M" />
 
-        <activity
-            android:name=".activity.FrezzAmulanceActivity"
-            android:exported="true" />
         <activity
             android:name=".activity.NormalAmbulanceActivity"
             android:exported="true" />
@@ -111,14 +96,6 @@
         <activity
             android:name=".activity.FindDoctorActivity"
             android:exported="false" />
-        <activity
-            android:name=".activity.VerifyOTPActivity"
-            android:screenOrientation="portrait"
-            android:windowSoftInputMode="adjustResize" />
-        <activity
-            android:name=".activity.SentOTPActivity"
-            android:screenOrientation="portrait"
-            android:windowSoftInputMode="adjustResize" />
         <activity
             android:name=".activity.SignupActivity"
             android:exported="true" />

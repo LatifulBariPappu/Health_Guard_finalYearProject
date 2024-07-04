@@ -4,7 +4,6 @@ package com.example.healthguard.activity;
 import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.widget.ImageView;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -46,7 +45,6 @@ public class ChatDocActivity extends AppCompatActivity {
         mainUserRecyclerView.setLayoutManager(new LinearLayoutManager(this));
         adapter = new UserAdpter(ChatDocActivity.this,usersArrayList);
         mainUserRecyclerView.setAdapter(adapter);
-
 
         reference.addValueEventListener(new ValueEventListener() {
             @Override

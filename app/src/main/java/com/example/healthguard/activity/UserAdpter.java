@@ -14,7 +14,6 @@ import com.example.healthguard.R;
 
 import java.util.ArrayList;
 
-import de.hdodenhof.circleimageview.CircleImageView;
 
 public class UserAdpter extends RecyclerView.Adapter<UserAdpter.viewholder> {
     Context mainActivity;
@@ -40,14 +39,12 @@ public class UserAdpter extends RecyclerView.Adapter<UserAdpter.viewholder> {
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(mainActivity, ChatWindoActivity.class);
+                Intent intent = new Intent(mainActivity, ChatWindowwActivity.class);
                 intent.putExtra("nameeee",users.getUserName());
                 intent.putExtra("uid",users.getUserId());
                 mainActivity.startActivity(intent);
             }
         });
-
-
 
     }
 
@@ -57,7 +54,6 @@ public class UserAdpter extends RecyclerView.Adapter<UserAdpter.viewholder> {
     }
 
     public class viewholder extends RecyclerView.ViewHolder {
-        CircleImageView userimg;
         TextView username;
         public viewholder(@NonNull View itemView) {
             super(itemView);
