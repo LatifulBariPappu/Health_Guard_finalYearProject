@@ -25,6 +25,9 @@
         android:theme="@style/Theme.HealthGuard"
         tools:targetApi="tiramisu">
         <activity
+            android:name=".activity.ChatWindoActivity"
+            android:exported="false" />
+        <activity
             android:name=".activity.ChatDocActivity"
             android:exported="false" />
         <activity
